@@ -1,0 +1,12 @@
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\bin\Debug\WcfServiceLibrary1.dll
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\bin\Debug\WcfServiceLibrary1.pdb
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\obj\x86\Debug\ResGen.read.1.tlog
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\obj\x86\Debug\ResGen.write.1.tlog
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+E:\CNDVW\Project\123\WcfServiceLibrary1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config

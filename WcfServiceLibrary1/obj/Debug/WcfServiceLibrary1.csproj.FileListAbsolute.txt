@@ -4,3 +4,9 @@ E:\CNDVW\Project\123\WcfServiceLibrary1\WcfServiceLibrary1\bin\Debug\WcfServiceL
 E:\CNDVW\Project\123\WcfServiceLibrary1\WcfServiceLibrary1\obj\Debug\ResolveAssemblyReference.cache
 E:\CNDVW\Project\123\WcfServiceLibrary1\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.dll
 E:\CNDVW\Project\123\WcfServiceLibrary1\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.pdb
+D:\WCF-v1\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll.config
+D:\WCF-v1\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll
+D:\WCF-v1\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.pdb
+D:\WCF-v1\WcfServiceLibrary1\obj\Debug\ResolveAssemblyReference.cache
+D:\WCF-v1\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.dll
+D:\WCF-v1\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.pdb

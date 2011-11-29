@@ -66,5 +66,23 @@ namespace Client
                 textBox1.Text = "";
             }
         }
+
+        private void bt_Asynchronous_Click(object sender, EventArgs e)
+        {
+            ServiceReference1.Service1Client Basic = new ServiceReference1.Service1Client();
+            Basic.GetAuthorsCompleted += new EventHandler<ServiceReference1.GetAuthorsCompletedEventArgs>(GetAuthors1);
+            Basic.GetAuthorsAsync();
+        }
+        void GetAuthors1(Object sender, ServiceReference1.GetAuthorsCompletedEventArgs e)
+        {
+            try
+            {
+                textBox1.Text = e.Result;
+            }
+            catch (System.Exception ex)
+            {
+
+            }
+        }
     }
 }

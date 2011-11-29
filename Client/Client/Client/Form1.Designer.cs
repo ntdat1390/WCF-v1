@@ -28,30 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tb_KetNoiTuDong = new System.Windows.Forms.TextBox();
-            this.bt_TuDongKetNoi = new System.Windows.Forms.Button();
+            this.bt_Asynchronous = new System.Windows.Forms.Button();
             this.bt_Start = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.ds_KetNoi = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // tb_KetNoiTuDong
+            // bt_Asynchronous
             // 
-            this.tb_KetNoiTuDong.Location = new System.Drawing.Point(351, 8);
-            this.tb_KetNoiTuDong.Name = "tb_KetNoiTuDong";
-            this.tb_KetNoiTuDong.ReadOnly = true;
-            this.tb_KetNoiTuDong.Size = new System.Drawing.Size(100, 20);
-            this.tb_KetNoiTuDong.TabIndex = 26;
-            // 
-            // bt_TuDongKetNoi
-            // 
-            this.bt_TuDongKetNoi.Location = new System.Drawing.Point(253, 6);
-            this.bt_TuDongKetNoi.Name = "bt_TuDongKetNoi";
-            this.bt_TuDongKetNoi.Size = new System.Drawing.Size(92, 23);
-            this.bt_TuDongKetNoi.TabIndex = 25;
-            this.bt_TuDongKetNoi.Text = "Asynchronous";
-            this.bt_TuDongKetNoi.UseVisualStyleBackColor = true;
+            this.bt_Asynchronous.Location = new System.Drawing.Point(253, 6);
+            this.bt_Asynchronous.Name = "bt_Asynchronous";
+            this.bt_Asynchronous.Size = new System.Drawing.Size(92, 23);
+            this.bt_Asynchronous.TabIndex = 25;
+            this.bt_Asynchronous.Text = "Asynchronous";
+            this.bt_Asynchronous.UseVisualStyleBackColor = true;
+            this.bt_Asynchronous.Click += new System.EventHandler(this.bt_Asynchronous_Click);
             // 
             // bt_Start
             // 
@@ -98,8 +90,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 134);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.tb_KetNoiTuDong);
-            this.Controls.Add(this.bt_TuDongKetNoi);
+            this.Controls.Add(this.bt_Asynchronous);
             this.Controls.Add(this.bt_Start);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ds_KetNoi);
@@ -112,8 +103,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tb_KetNoiTuDong;
-        private System.Windows.Forms.Button bt_TuDongKetNoi;
+        private System.Windows.Forms.Button bt_Asynchronous;
         private System.Windows.Forms.Button bt_Start;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox ds_KetNoi;

@@ -1,0 +1,10 @@
+D:\WCF-v1\Server\Server\Server\bin\Debug\Server.exe.config
+D:\WCF-v1\Server\Server\Server\bin\Debug\Server.exe
+D:\WCF-v1\Server\Server\Server\bin\Debug\Server.pdb
+D:\WCF-v1\Server\Server\Server\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\WCF-v1\Server\Server\Server\obj\x86\Debug\Server.Form1.resources
+D:\WCF-v1\Server\Server\Server\obj\x86\Debug\Server.Properties.Resources.resources
+D:\WCF-v1\Server\Server\Server\obj\x86\Debug\ResGen.read.1.tlog
+D:\WCF-v1\Server\Server\Server\obj\x86\Debug\ResGen.write.1.tlog
+D:\WCF-v1\Server\Server\Server\obj\x86\Debug\Server.exe
+D:\WCF-v1\Server\Server\Server\obj\x86\Debug\Server.pdb

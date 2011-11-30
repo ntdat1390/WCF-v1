@@ -15,11 +15,15 @@ namespace Server
             string a = "Nguyễn Thế Đạt";
             string b = "Nguyễn Quang Khải";
             string c = "Xây dựng ứng dụng WS cung cấp thông tin nhà hàng, quán cà phê";
-            return string.Format("Tác giả: {0}   {1}. Đề tài:  {2}", a, b, c);
+            return string.Format("Tác giả: {0}   {1}.\nĐề tài:  {2}", a, b, c);
         }
-        public string GetAuthors2()
+        public string GetAuthors1()
         {
             return string.Format("Đề tài: Xây dựng ứng dụng WS cung cấp thông tin nhà hàng, quán cà phê");
+        }
+        public string GetNHCF()
+        {
+            return "123";
         }
     }
 }

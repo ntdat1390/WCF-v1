@@ -13,17 +13,34 @@ namespace Server
     {
         [OperationContract]
         string GetAuthors();
-
+        string GetNHCF();
         // TODO: Add your service operations here
     }
-    [ServiceContract]
     public interface IService2
     {
         [OperationContract]
-        string GetAuthors2();
-
+        string GetAuthors1();
         // TODO: Add your service operations here
     }
-
     // Use a data contract as illustrated in the sample below to add composite types to service operations
+    [DataContract]
+    public class NHCF
+    {
+        bool boolValue = true;
+        string stringValue = "Hello ";
+
+        [DataMember]
+        public bool BoolValue
+        {
+            get { return boolValue; }
+            set { boolValue = value; }
+        }
+
+        [DataMember]
+        public string StringValue
+        {
+            get { return stringValue; }
+            set { stringValue = value; }
+        }
+    }
 }

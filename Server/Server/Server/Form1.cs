@@ -41,6 +41,7 @@ namespace Server
         {
             if (!serviceStarted)
             {
+                groupBox1.Enabled = false;
                 Uri baseAddress;
                 txbMessageCarrent.Text = "Tạo kiểu kết nối ";
                 try
@@ -105,6 +106,8 @@ namespace Server
                 catch (System.Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Lỗi...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    myServiceHost.Close();
+                    groupBox1.Enabled = true;
                 }
             }
         }
@@ -120,6 +123,7 @@ namespace Server
             serviceStarted = false;
             btStop.Enabled = false;
             btStart.Enabled = true;
+            groupBox1.Enabled = true;
             txbMessageCarrent.Text = "Server đã dừng!";
         }
     }

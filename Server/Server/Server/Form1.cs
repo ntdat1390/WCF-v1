@@ -59,7 +59,7 @@ namespace Server
                             behavior.HttpGetEnabled = true;
                             myServiceHost.Description.Behaviors.Add(behavior);
                             behavior.HttpGetUrl = baseAddress;
-                            myServiceHost.AddServiceEndpoint(typeof(IMetadataExchange), new BasicHttpBinding(), "MEX1");
+                            myServiceHost.AddServiceEndpoint(typeof(IMetadataExchange), new BasicHttpBinding(), "http://localhost:8000/BasicHttpBinding/mex");
                         }
                         myServiceHost.Open();
                         txbMessageCarrent.Text += " BasicHttpBinding";
@@ -77,7 +77,7 @@ namespace Server
                             behavior.HttpGetEnabled = true;
                             myServiceHost.Description.Behaviors.Add(behavior);
                             behavior.HttpGetUrl = baseAddress;
-                            myServiceHost.AddServiceEndpoint(typeof(IMetadataExchange), new WSHttpBinding(), "MEX2");
+                            myServiceHost.AddServiceEndpoint(typeof(IMetadataExchange), new WSHttpBinding(),"http://localhost:8000/WSHttpBinding/mex");
                         }
                         myServiceHost.Open();
                         txbMessageCarrent.Text += " WSHttpBinding";

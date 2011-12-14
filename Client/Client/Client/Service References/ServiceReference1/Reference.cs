@@ -16,12 +16,219 @@ namespace Client.ServiceReference1 {
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAuthors", ReplyAction="http://tempuri.org/IService1/GetAuthorsResponse")]
-        string GetAuthors();
+        string[] GetAuthors();
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetAuthors", ReplyAction="http://tempuri.org/IService1/GetAuthorsResponse")]
         System.IAsyncResult BeginGetAuthors(System.AsyncCallback callback, object asyncState);
         
-        string EndGetAuthors(System.IAsyncResult result);
+        string[] EndGetAuthors(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Userdangky", ReplyAction="http://tempuri.org/IService1/UserdangkyResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Server.KiemTraLoi), Action="http://tempuri.org/IService1/UserdangkyKiemTraLoiFault", Name="KiemTraLoi", Namespace="http://schemas.datacontract.org/2004/07/Server")]
+        string Userdangky(string username, string password, string email, string hoten, string diachi, string sodienthoai, int phanquyen);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Userdangky", ReplyAction="http://tempuri.org/IService1/UserdangkyResponse")]
+        System.IAsyncResult BeginUserdangky(string username, string password, string email, string hoten, string diachi, string sodienthoai, int phanquyen, System.AsyncCallback callback, object asyncState);
+        
+        string EndUserdangky(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Userdangnhap", ReplyAction="http://tempuri.org/IService1/UserdangnhapResponse")]
+        bool Userdangnhap(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Userdangnhap", ReplyAction="http://tempuri.org/IService1/UserdangnhapResponse")]
+        System.IAsyncResult BeginUserdangnhap(string username, string password, System.AsyncCallback callback, object asyncState);
+        
+        bool EndUserdangnhap(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadNHCF", ReplyAction="http://tempuri.org/IService1/LoadNHCFResponse")]
+        Server.NHCF[] LoadNHCF();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/LoadNHCF", ReplyAction="http://tempuri.org/IService1/LoadNHCFResponse")]
+        System.IAsyncResult BeginLoadNHCF(System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndLoadNHCF(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadTP", ReplyAction="http://tempuri.org/IService1/LoadTPResponse")]
+        string[] LoadTP();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/LoadTP", ReplyAction="http://tempuri.org/IService1/LoadTPResponse")]
+        System.IAsyncResult BeginLoadTP(System.AsyncCallback callback, object asyncState);
+        
+        string[] EndLoadTP(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/LoadQuan", ReplyAction="http://tempuri.org/IService1/LoadQuanResponse")]
+        string[] LoadQuan(int tp);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/LoadQuan", ReplyAction="http://tempuri.org/IService1/LoadQuanResponse")]
+        System.IAsyncResult BeginLoadQuan(int tp, System.AsyncCallback callback, object asyncState);
+        
+        string[] EndLoadQuan(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timdiadiem", ReplyAction="http://tempuri.org/IService1/TimdiadiemResponse")]
+        Server.NHCF[] Timdiadiem(string TenThanhPho, string Quan, string Duong, bool chinhxac);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timdiadiem", ReplyAction="http://tempuri.org/IService1/TimdiadiemResponse")]
+        System.IAsyncResult BeginTimdiadiem(string TenThanhPho, string Quan, string Duong, bool chinhxac, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimdiadiem(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timdiadiemtp", ReplyAction="http://tempuri.org/IService1/TimdiadiemtpResponse")]
+        Server.NHCF[] Timdiadiemtp(string TenThanhPho);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timdiadiemtp", ReplyAction="http://tempuri.org/IService1/TimdiadiemtpResponse")]
+        System.IAsyncResult BeginTimdiadiemtp(string TenThanhPho, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimdiadiemtp(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timdiadiemtpquan", ReplyAction="http://tempuri.org/IService1/TimdiadiemtpquanResponse")]
+        Server.NHCF[] Timdiadiemtpquan(string TenThanhPho, string Quan);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timdiadiemtpquan", ReplyAction="http://tempuri.org/IService1/TimdiadiemtpquanResponse")]
+        System.IAsyncResult BeginTimdiadiemtpquan(string TenThanhPho, string Quan, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimdiadiemtpquan(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timdiadiemduong", ReplyAction="http://tempuri.org/IService1/TimdiadiemduongResponse")]
+        Server.NHCF[] Timdiadiemduong(string Duong, bool chinhxac);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timdiadiemduong", ReplyAction="http://tempuri.org/IService1/TimdiadiemduongResponse")]
+        System.IAsyncResult BeginTimdiadiemduong(string Duong, bool chinhxac, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimdiadiemduong(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timnguoidang", ReplyAction="http://tempuri.org/IService1/TimnguoidangResponse")]
+        Server.NHCF[] Timnguoidang(string username);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timnguoidang", ReplyAction="http://tempuri.org/IService1/TimnguoidangResponse")]
+        System.IAsyncResult BeginTimnguoidang(string username, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimnguoidang(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timkhonggian", ReplyAction="http://tempuri.org/IService1/TimkhonggianResponse")]
+        Server.NHCF[] Timkhonggian(string Loai);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timkhonggian", ReplyAction="http://tempuri.org/IService1/TimkhonggianResponse")]
+        System.IAsyncResult BeginTimkhonggian(string Loai, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimkhonggian(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timmonan", ReplyAction="http://tempuri.org/IService1/TimmonanResponse")]
+        Server.NHCF[] Timmonan(string MonAn);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timmonan", ReplyAction="http://tempuri.org/IService1/TimmonanResponse")]
+        System.IAsyncResult BeginTimmonan(string MonAn, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimmonan(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timnhucau", ReplyAction="http://tempuri.org/IService1/TimnhucauResponse")]
+        Server.NHCF[] Timnhucau(string MucDich);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timnhucau", ReplyAction="http://tempuri.org/IService1/TimnhucauResponse")]
+        System.IAsyncResult BeginTimnhucau(string MucDich, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimnhucau(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timgia", ReplyAction="http://tempuri.org/IService1/TimgiaResponse")]
+        Server.NHCF[] Timgia(int GiaTu, int GiaDen);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timgia", ReplyAction="http://tempuri.org/IService1/TimgiaResponse")]
+        System.IAsyncResult BeginTimgia(int GiaTu, int GiaDen, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimgia(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Timkhuyenmai", ReplyAction="http://tempuri.org/IService1/TimkhuyenmaiResponse")]
+        Server.NHCF[] Timkhuyenmai(string Loai);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Timkhuyenmai", ReplyAction="http://tempuri.org/IService1/TimkhuyenmaiResponse")]
+        System.IAsyncResult BeginTimkhuyenmai(string Loai, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF[] EndTimkhuyenmai(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetNHCF", ReplyAction="http://tempuri.org/IService1/GetNHCFResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Server.CustomFaultMsg), Action="http://tempuri.org/IService1/GetNHCFCustomFaultMsgFault", Name="CustomFaultMsg", Namespace="http://schemas.datacontract.org/2004/07/Server")]
+        Server.NHCF GetNHCF(int Id, Server.NHCF[] nhahang);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetNHCF", ReplyAction="http://tempuri.org/IService1/GetNHCFResponse")]
+        System.IAsyncResult BeginGetNHCF(int Id, Server.NHCF[] nhahang, System.AsyncCallback callback, object asyncState);
+        
+        Server.NHCF EndGetNHCF(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/HasNHCF", ReplyAction="http://tempuri.org/IService1/HasNHCFResponse")]
+        bool HasNHCF(int Id, Server.NHCF[] nhahang);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/HasNHCF", ReplyAction="http://tempuri.org/IService1/HasNHCFResponse")]
+        System.IAsyncResult BeginHasNHCF(int Id, Server.NHCF[] nhahang, System.AsyncCallback callback, object asyncState);
+        
+        bool EndHasNHCF(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMenu", ReplyAction="http://tempuri.org/IService1/GetMenuResponse")]
+        Server.ThucDon[] GetMenu(int IdNhaHang);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetMenu", ReplyAction="http://tempuri.org/IService1/GetMenuResponse")]
+        System.IAsyncResult BeginGetMenu(int IdNhaHang, System.AsyncCallback callback, object asyncState);
+        
+        Server.ThucDon[] EndGetMenu(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetKhuyenMai", ReplyAction="http://tempuri.org/IService1/GetKhuyenMaiResponse")]
+        Server.KhuyenMai GetKhuyenMai(int IdNhaHang);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetKhuyenMai", ReplyAction="http://tempuri.org/IService1/GetKhuyenMaiResponse")]
+        System.IAsyncResult BeginGetKhuyenMai(int IdNhaHang, System.AsyncCallback callback, object asyncState);
+        
+        Server.KhuyenMai EndGetKhuyenMai(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetGopY", ReplyAction="http://tempuri.org/IService1/GetGopYResponse")]
+        Server.GopY[] GetGopY(int IdNhaHang);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetGopY", ReplyAction="http://tempuri.org/IService1/GetGopYResponse")]
+        System.IAsyncResult BeginGetGopY(int IdNhaHang, System.AsyncCallback callback, object asyncState);
+        
+        Server.GopY[] EndGetGopY(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GopY", ReplyAction="http://tempuri.org/IService1/GopYResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Server.KiemTraLoi), Action="http://tempuri.org/IService1/GopYKiemTraLoiFault", Name="KiemTraLoi", Namespace="http://schemas.datacontract.org/2004/07/Server")]
+        string GopY(int IdNhaHang, string TaiKhoan, string NoiDung, string NgayGopY);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GopY", ReplyAction="http://tempuri.org/IService1/GopYResponse")]
+        System.IAsyncResult BeginGopY(int IdNhaHang, string TaiKhoan, string NoiDung, string NgayGopY, System.AsyncCallback callback, object asyncState);
+        
+        string EndGopY(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DatBan", ReplyAction="http://tempuri.org/IService1/DatBanResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Server.KiemTraLoi), Action="http://tempuri.org/IService1/DatBanKiemTraLoiFault", Name="KiemTraLoi", Namespace="http://schemas.datacontract.org/2004/07/Server")]
+        string DatBan(int IdNhaHang, string TaiKhoan, int SoCho, string ThoiGian, string DichVu, string DienThoai);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/DatBan", ReplyAction="http://tempuri.org/IService1/DatBanResponse")]
+        System.IAsyncResult BeginDatBan(int IdNhaHang, string TaiKhoan, int SoCho, string ThoiGian, string DichVu, string DienThoai, System.AsyncCallback callback, object asyncState);
+        
+        string EndDatBan(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DangNHCF", ReplyAction="http://tempuri.org/IService1/DangNHCFResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Server.KiemTraLoi), Action="http://tempuri.org/IService1/DangNHCFKiemTraLoiFault", Name="KiemTraLoi", Namespace="http://schemas.datacontract.org/2004/07/Server")]
+        string DangNHCF(Server.NHCF NhaHang, int IdQuan, int IdThanhPho, string username);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/DangNHCF", ReplyAction="http://tempuri.org/IService1/DangNHCFResponse")]
+        System.IAsyncResult BeginDangNHCF(Server.NHCF NhaHang, int IdQuan, int IdThanhPho, string username, System.AsyncCallback callback, object asyncState);
+        
+        string EndDangNHCF(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DangThucDon", ReplyAction="http://tempuri.org/IService1/DangThucDonResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Server.KiemTraLoi), Action="http://tempuri.org/IService1/DangThucDonKiemTraLoiFault", Name="KiemTraLoi", Namespace="http://schemas.datacontract.org/2004/07/Server")]
+        string DangThucDon(Server.ThucDon menu);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/DangThucDon", ReplyAction="http://tempuri.org/IService1/DangThucDonResponse")]
+        System.IAsyncResult BeginDangThucDon(Server.ThucDon menu, System.AsyncCallback callback, object asyncState);
+        
+        string EndDangThucDon(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DangKhuyenMai", ReplyAction="http://tempuri.org/IService1/DangKhuyenMaiResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Server.KiemTraLoi), Action="http://tempuri.org/IService1/DangKhuyenMaiKiemTraLoiFault", Name="KiemTraLoi", Namespace="http://schemas.datacontract.org/2004/07/Server")]
+        string DangKhuyenMai(Server.KhuyenMai khmai);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/DangKhuyenMai", ReplyAction="http://tempuri.org/IService1/DangKhuyenMaiResponse")]
+        System.IAsyncResult BeginDangKhuyenMai(Server.KhuyenMai khmai, System.AsyncCallback callback, object asyncState);
+        
+        string EndDangKhuyenMai(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -35,6 +242,481 @@ namespace Client.ServiceReference1 {
         private object[] results;
         
         public GetAuthorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UserdangkyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UserdangkyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UserdangnhapCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UserdangnhapCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoadNHCFCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoadNHCFCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoadTPCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoadTPCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class LoadQuanCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public LoadQuanCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimdiadiemCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimdiadiemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimdiadiemtpCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimdiadiemtpCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimdiadiemtpquanCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimdiadiemtpquanCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimdiadiemduongCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimdiadiemduongCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimnguoidangCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimnguoidangCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimkhonggianCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimkhonggianCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimmonanCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimmonanCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimnhucauCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimnhucauCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimgiaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimgiaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TimkhuyenmaiCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TimkhuyenmaiCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetNHCFCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetNHCFCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.NHCF Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.NHCF)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class HasNHCFCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public HasNHCFCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetMenuCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetMenuCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.ThucDon[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.ThucDon[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetKhuyenMaiCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetKhuyenMaiCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.KhuyenMai Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.KhuyenMai)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetGopYCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetGopYCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public Server.GopY[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((Server.GopY[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GopYCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GopYCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DatBanCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DatBanCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DangNHCFCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DangNHCFCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DangThucDonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DangThucDonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DangKhuyenMaiCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DangKhuyenMaiCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -57,6 +739,156 @@ namespace Client.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetAuthorsCompletedDelegate;
         
+        private BeginOperationDelegate onBeginUserdangkyDelegate;
+        
+        private EndOperationDelegate onEndUserdangkyDelegate;
+        
+        private System.Threading.SendOrPostCallback onUserdangkyCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUserdangnhapDelegate;
+        
+        private EndOperationDelegate onEndUserdangnhapDelegate;
+        
+        private System.Threading.SendOrPostCallback onUserdangnhapCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLoadNHCFDelegate;
+        
+        private EndOperationDelegate onEndLoadNHCFDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoadNHCFCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLoadTPDelegate;
+        
+        private EndOperationDelegate onEndLoadTPDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoadTPCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLoadQuanDelegate;
+        
+        private EndOperationDelegate onEndLoadQuanDelegate;
+        
+        private System.Threading.SendOrPostCallback onLoadQuanCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimdiadiemDelegate;
+        
+        private EndOperationDelegate onEndTimdiadiemDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimdiadiemCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimdiadiemtpDelegate;
+        
+        private EndOperationDelegate onEndTimdiadiemtpDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimdiadiemtpCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimdiadiemtpquanDelegate;
+        
+        private EndOperationDelegate onEndTimdiadiemtpquanDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimdiadiemtpquanCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimdiadiemduongDelegate;
+        
+        private EndOperationDelegate onEndTimdiadiemduongDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimdiadiemduongCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimnguoidangDelegate;
+        
+        private EndOperationDelegate onEndTimnguoidangDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimnguoidangCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimkhonggianDelegate;
+        
+        private EndOperationDelegate onEndTimkhonggianDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimkhonggianCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimmonanDelegate;
+        
+        private EndOperationDelegate onEndTimmonanDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimmonanCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimnhucauDelegate;
+        
+        private EndOperationDelegate onEndTimnhucauDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimnhucauCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimgiaDelegate;
+        
+        private EndOperationDelegate onEndTimgiaDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimgiaCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTimkhuyenmaiDelegate;
+        
+        private EndOperationDelegate onEndTimkhuyenmaiDelegate;
+        
+        private System.Threading.SendOrPostCallback onTimkhuyenmaiCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetNHCFDelegate;
+        
+        private EndOperationDelegate onEndGetNHCFDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetNHCFCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginHasNHCFDelegate;
+        
+        private EndOperationDelegate onEndHasNHCFDelegate;
+        
+        private System.Threading.SendOrPostCallback onHasNHCFCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetMenuDelegate;
+        
+        private EndOperationDelegate onEndGetMenuDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetMenuCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetKhuyenMaiDelegate;
+        
+        private EndOperationDelegate onEndGetKhuyenMaiDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetKhuyenMaiCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetGopYDelegate;
+        
+        private EndOperationDelegate onEndGetGopYDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetGopYCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGopYDelegate;
+        
+        private EndOperationDelegate onEndGopYDelegate;
+        
+        private System.Threading.SendOrPostCallback onGopYCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDatBanDelegate;
+        
+        private EndOperationDelegate onEndDatBanDelegate;
+        
+        private System.Threading.SendOrPostCallback onDatBanCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDangNHCFDelegate;
+        
+        private EndOperationDelegate onEndDangNHCFDelegate;
+        
+        private System.Threading.SendOrPostCallback onDangNHCFCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDangThucDonDelegate;
+        
+        private EndOperationDelegate onEndDangThucDonDelegate;
+        
+        private System.Threading.SendOrPostCallback onDangThucDonCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDangKhuyenMaiDelegate;
+        
+        private EndOperationDelegate onEndDangKhuyenMaiDelegate;
+        
+        private System.Threading.SendOrPostCallback onDangKhuyenMaiCompletedDelegate;
+        
         public Service1Client() {
         }
         
@@ -78,7 +910,57 @@ namespace Client.ServiceReference1 {
         
         public event System.EventHandler<GetAuthorsCompletedEventArgs> GetAuthorsCompleted;
         
-        public string GetAuthors() {
+        public event System.EventHandler<UserdangkyCompletedEventArgs> UserdangkyCompleted;
+        
+        public event System.EventHandler<UserdangnhapCompletedEventArgs> UserdangnhapCompleted;
+        
+        public event System.EventHandler<LoadNHCFCompletedEventArgs> LoadNHCFCompleted;
+        
+        public event System.EventHandler<LoadTPCompletedEventArgs> LoadTPCompleted;
+        
+        public event System.EventHandler<LoadQuanCompletedEventArgs> LoadQuanCompleted;
+        
+        public event System.EventHandler<TimdiadiemCompletedEventArgs> TimdiadiemCompleted;
+        
+        public event System.EventHandler<TimdiadiemtpCompletedEventArgs> TimdiadiemtpCompleted;
+        
+        public event System.EventHandler<TimdiadiemtpquanCompletedEventArgs> TimdiadiemtpquanCompleted;
+        
+        public event System.EventHandler<TimdiadiemduongCompletedEventArgs> TimdiadiemduongCompleted;
+        
+        public event System.EventHandler<TimnguoidangCompletedEventArgs> TimnguoidangCompleted;
+        
+        public event System.EventHandler<TimkhonggianCompletedEventArgs> TimkhonggianCompleted;
+        
+        public event System.EventHandler<TimmonanCompletedEventArgs> TimmonanCompleted;
+        
+        public event System.EventHandler<TimnhucauCompletedEventArgs> TimnhucauCompleted;
+        
+        public event System.EventHandler<TimgiaCompletedEventArgs> TimgiaCompleted;
+        
+        public event System.EventHandler<TimkhuyenmaiCompletedEventArgs> TimkhuyenmaiCompleted;
+        
+        public event System.EventHandler<GetNHCFCompletedEventArgs> GetNHCFCompleted;
+        
+        public event System.EventHandler<HasNHCFCompletedEventArgs> HasNHCFCompleted;
+        
+        public event System.EventHandler<GetMenuCompletedEventArgs> GetMenuCompleted;
+        
+        public event System.EventHandler<GetKhuyenMaiCompletedEventArgs> GetKhuyenMaiCompleted;
+        
+        public event System.EventHandler<GetGopYCompletedEventArgs> GetGopYCompleted;
+        
+        public event System.EventHandler<GopYCompletedEventArgs> GopYCompleted;
+        
+        public event System.EventHandler<DatBanCompletedEventArgs> DatBanCompleted;
+        
+        public event System.EventHandler<DangNHCFCompletedEventArgs> DangNHCFCompleted;
+        
+        public event System.EventHandler<DangThucDonCompletedEventArgs> DangThucDonCompleted;
+        
+        public event System.EventHandler<DangKhuyenMaiCompletedEventArgs> DangKhuyenMaiCompleted;
+        
+        public string[] GetAuthors() {
             return base.Channel.GetAuthors();
         }
         
@@ -88,7 +970,7 @@ namespace Client.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndGetAuthors(System.IAsyncResult result) {
+        public string[] EndGetAuthors(System.IAsyncResult result) {
             return base.Channel.EndGetAuthors(result);
         }
         
@@ -97,7 +979,7 @@ namespace Client.ServiceReference1 {
         }
         
         private object[] OnEndGetAuthors(System.IAsyncResult result) {
-            string retVal = this.EndGetAuthors(result);
+            string[] retVal = this.EndGetAuthors(result);
             return new object[] {
                     retVal};
         }
@@ -124,6 +1006,1304 @@ namespace Client.ServiceReference1 {
                 this.onGetAuthorsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAuthorsCompleted);
             }
             base.InvokeAsync(this.onBeginGetAuthorsDelegate, null, this.onEndGetAuthorsDelegate, this.onGetAuthorsCompletedDelegate, userState);
+        }
+        
+        public string Userdangky(string username, string password, string email, string hoten, string diachi, string sodienthoai, int phanquyen) {
+            return base.Channel.Userdangky(username, password, email, hoten, diachi, sodienthoai, phanquyen);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUserdangky(string username, string password, string email, string hoten, string diachi, string sodienthoai, int phanquyen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUserdangky(username, password, email, hoten, diachi, sodienthoai, phanquyen, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndUserdangky(System.IAsyncResult result) {
+            return base.Channel.EndUserdangky(result);
+        }
+        
+        private System.IAsyncResult OnBeginUserdangky(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            string email = ((string)(inValues[2]));
+            string hoten = ((string)(inValues[3]));
+            string diachi = ((string)(inValues[4]));
+            string sodienthoai = ((string)(inValues[5]));
+            int phanquyen = ((int)(inValues[6]));
+            return this.BeginUserdangky(username, password, email, hoten, diachi, sodienthoai, phanquyen, callback, asyncState);
+        }
+        
+        private object[] OnEndUserdangky(System.IAsyncResult result) {
+            string retVal = this.EndUserdangky(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUserdangkyCompleted(object state) {
+            if ((this.UserdangkyCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UserdangkyCompleted(this, new UserdangkyCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UserdangkyAsync(string username, string password, string email, string hoten, string diachi, string sodienthoai, int phanquyen) {
+            this.UserdangkyAsync(username, password, email, hoten, diachi, sodienthoai, phanquyen, null);
+        }
+        
+        public void UserdangkyAsync(string username, string password, string email, string hoten, string diachi, string sodienthoai, int phanquyen, object userState) {
+            if ((this.onBeginUserdangkyDelegate == null)) {
+                this.onBeginUserdangkyDelegate = new BeginOperationDelegate(this.OnBeginUserdangky);
+            }
+            if ((this.onEndUserdangkyDelegate == null)) {
+                this.onEndUserdangkyDelegate = new EndOperationDelegate(this.OnEndUserdangky);
+            }
+            if ((this.onUserdangkyCompletedDelegate == null)) {
+                this.onUserdangkyCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUserdangkyCompleted);
+            }
+            base.InvokeAsync(this.onBeginUserdangkyDelegate, new object[] {
+                        username,
+                        password,
+                        email,
+                        hoten,
+                        diachi,
+                        sodienthoai,
+                        phanquyen}, this.onEndUserdangkyDelegate, this.onUserdangkyCompletedDelegate, userState);
+        }
+        
+        public bool Userdangnhap(string username, string password) {
+            return base.Channel.Userdangnhap(username, password);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUserdangnhap(string username, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUserdangnhap(username, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndUserdangnhap(System.IAsyncResult result) {
+            return base.Channel.EndUserdangnhap(result);
+        }
+        
+        private System.IAsyncResult OnBeginUserdangnhap(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return this.BeginUserdangnhap(username, password, callback, asyncState);
+        }
+        
+        private object[] OnEndUserdangnhap(System.IAsyncResult result) {
+            bool retVal = this.EndUserdangnhap(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUserdangnhapCompleted(object state) {
+            if ((this.UserdangnhapCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UserdangnhapCompleted(this, new UserdangnhapCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UserdangnhapAsync(string username, string password) {
+            this.UserdangnhapAsync(username, password, null);
+        }
+        
+        public void UserdangnhapAsync(string username, string password, object userState) {
+            if ((this.onBeginUserdangnhapDelegate == null)) {
+                this.onBeginUserdangnhapDelegate = new BeginOperationDelegate(this.OnBeginUserdangnhap);
+            }
+            if ((this.onEndUserdangnhapDelegate == null)) {
+                this.onEndUserdangnhapDelegate = new EndOperationDelegate(this.OnEndUserdangnhap);
+            }
+            if ((this.onUserdangnhapCompletedDelegate == null)) {
+                this.onUserdangnhapCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUserdangnhapCompleted);
+            }
+            base.InvokeAsync(this.onBeginUserdangnhapDelegate, new object[] {
+                        username,
+                        password}, this.onEndUserdangnhapDelegate, this.onUserdangnhapCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] LoadNHCF() {
+            return base.Channel.LoadNHCF();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLoadNHCF(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLoadNHCF(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndLoadNHCF(System.IAsyncResult result) {
+            return base.Channel.EndLoadNHCF(result);
+        }
+        
+        private System.IAsyncResult OnBeginLoadNHCF(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginLoadNHCF(callback, asyncState);
+        }
+        
+        private object[] OnEndLoadNHCF(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndLoadNHCF(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoadNHCFCompleted(object state) {
+            if ((this.LoadNHCFCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoadNHCFCompleted(this, new LoadNHCFCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoadNHCFAsync() {
+            this.LoadNHCFAsync(null);
+        }
+        
+        public void LoadNHCFAsync(object userState) {
+            if ((this.onBeginLoadNHCFDelegate == null)) {
+                this.onBeginLoadNHCFDelegate = new BeginOperationDelegate(this.OnBeginLoadNHCF);
+            }
+            if ((this.onEndLoadNHCFDelegate == null)) {
+                this.onEndLoadNHCFDelegate = new EndOperationDelegate(this.OnEndLoadNHCF);
+            }
+            if ((this.onLoadNHCFCompletedDelegate == null)) {
+                this.onLoadNHCFCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadNHCFCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoadNHCFDelegate, null, this.onEndLoadNHCFDelegate, this.onLoadNHCFCompletedDelegate, userState);
+        }
+        
+        public string[] LoadTP() {
+            return base.Channel.LoadTP();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLoadTP(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLoadTP(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string[] EndLoadTP(System.IAsyncResult result) {
+            return base.Channel.EndLoadTP(result);
+        }
+        
+        private System.IAsyncResult OnBeginLoadTP(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginLoadTP(callback, asyncState);
+        }
+        
+        private object[] OnEndLoadTP(System.IAsyncResult result) {
+            string[] retVal = this.EndLoadTP(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoadTPCompleted(object state) {
+            if ((this.LoadTPCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoadTPCompleted(this, new LoadTPCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoadTPAsync() {
+            this.LoadTPAsync(null);
+        }
+        
+        public void LoadTPAsync(object userState) {
+            if ((this.onBeginLoadTPDelegate == null)) {
+                this.onBeginLoadTPDelegate = new BeginOperationDelegate(this.OnBeginLoadTP);
+            }
+            if ((this.onEndLoadTPDelegate == null)) {
+                this.onEndLoadTPDelegate = new EndOperationDelegate(this.OnEndLoadTP);
+            }
+            if ((this.onLoadTPCompletedDelegate == null)) {
+                this.onLoadTPCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadTPCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoadTPDelegate, null, this.onEndLoadTPDelegate, this.onLoadTPCompletedDelegate, userState);
+        }
+        
+        public string[] LoadQuan(int tp) {
+            return base.Channel.LoadQuan(tp);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLoadQuan(int tp, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLoadQuan(tp, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string[] EndLoadQuan(System.IAsyncResult result) {
+            return base.Channel.EndLoadQuan(result);
+        }
+        
+        private System.IAsyncResult OnBeginLoadQuan(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int tp = ((int)(inValues[0]));
+            return this.BeginLoadQuan(tp, callback, asyncState);
+        }
+        
+        private object[] OnEndLoadQuan(System.IAsyncResult result) {
+            string[] retVal = this.EndLoadQuan(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnLoadQuanCompleted(object state) {
+            if ((this.LoadQuanCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LoadQuanCompleted(this, new LoadQuanCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LoadQuanAsync(int tp) {
+            this.LoadQuanAsync(tp, null);
+        }
+        
+        public void LoadQuanAsync(int tp, object userState) {
+            if ((this.onBeginLoadQuanDelegate == null)) {
+                this.onBeginLoadQuanDelegate = new BeginOperationDelegate(this.OnBeginLoadQuan);
+            }
+            if ((this.onEndLoadQuanDelegate == null)) {
+                this.onEndLoadQuanDelegate = new EndOperationDelegate(this.OnEndLoadQuan);
+            }
+            if ((this.onLoadQuanCompletedDelegate == null)) {
+                this.onLoadQuanCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLoadQuanCompleted);
+            }
+            base.InvokeAsync(this.onBeginLoadQuanDelegate, new object[] {
+                        tp}, this.onEndLoadQuanDelegate, this.onLoadQuanCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timdiadiem(string TenThanhPho, string Quan, string Duong, bool chinhxac) {
+            return base.Channel.Timdiadiem(TenThanhPho, Quan, Duong, chinhxac);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimdiadiem(string TenThanhPho, string Quan, string Duong, bool chinhxac, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimdiadiem(TenThanhPho, Quan, Duong, chinhxac, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimdiadiem(System.IAsyncResult result) {
+            return base.Channel.EndTimdiadiem(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimdiadiem(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string TenThanhPho = ((string)(inValues[0]));
+            string Quan = ((string)(inValues[1]));
+            string Duong = ((string)(inValues[2]));
+            bool chinhxac = ((bool)(inValues[3]));
+            return this.BeginTimdiadiem(TenThanhPho, Quan, Duong, chinhxac, callback, asyncState);
+        }
+        
+        private object[] OnEndTimdiadiem(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimdiadiem(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimdiadiemCompleted(object state) {
+            if ((this.TimdiadiemCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimdiadiemCompleted(this, new TimdiadiemCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimdiadiemAsync(string TenThanhPho, string Quan, string Duong, bool chinhxac) {
+            this.TimdiadiemAsync(TenThanhPho, Quan, Duong, chinhxac, null);
+        }
+        
+        public void TimdiadiemAsync(string TenThanhPho, string Quan, string Duong, bool chinhxac, object userState) {
+            if ((this.onBeginTimdiadiemDelegate == null)) {
+                this.onBeginTimdiadiemDelegate = new BeginOperationDelegate(this.OnBeginTimdiadiem);
+            }
+            if ((this.onEndTimdiadiemDelegate == null)) {
+                this.onEndTimdiadiemDelegate = new EndOperationDelegate(this.OnEndTimdiadiem);
+            }
+            if ((this.onTimdiadiemCompletedDelegate == null)) {
+                this.onTimdiadiemCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimdiadiemCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimdiadiemDelegate, new object[] {
+                        TenThanhPho,
+                        Quan,
+                        Duong,
+                        chinhxac}, this.onEndTimdiadiemDelegate, this.onTimdiadiemCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timdiadiemtp(string TenThanhPho) {
+            return base.Channel.Timdiadiemtp(TenThanhPho);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimdiadiemtp(string TenThanhPho, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimdiadiemtp(TenThanhPho, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimdiadiemtp(System.IAsyncResult result) {
+            return base.Channel.EndTimdiadiemtp(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimdiadiemtp(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string TenThanhPho = ((string)(inValues[0]));
+            return this.BeginTimdiadiemtp(TenThanhPho, callback, asyncState);
+        }
+        
+        private object[] OnEndTimdiadiemtp(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimdiadiemtp(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimdiadiemtpCompleted(object state) {
+            if ((this.TimdiadiemtpCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimdiadiemtpCompleted(this, new TimdiadiemtpCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimdiadiemtpAsync(string TenThanhPho) {
+            this.TimdiadiemtpAsync(TenThanhPho, null);
+        }
+        
+        public void TimdiadiemtpAsync(string TenThanhPho, object userState) {
+            if ((this.onBeginTimdiadiemtpDelegate == null)) {
+                this.onBeginTimdiadiemtpDelegate = new BeginOperationDelegate(this.OnBeginTimdiadiemtp);
+            }
+            if ((this.onEndTimdiadiemtpDelegate == null)) {
+                this.onEndTimdiadiemtpDelegate = new EndOperationDelegate(this.OnEndTimdiadiemtp);
+            }
+            if ((this.onTimdiadiemtpCompletedDelegate == null)) {
+                this.onTimdiadiemtpCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimdiadiemtpCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimdiadiemtpDelegate, new object[] {
+                        TenThanhPho}, this.onEndTimdiadiemtpDelegate, this.onTimdiadiemtpCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timdiadiemtpquan(string TenThanhPho, string Quan) {
+            return base.Channel.Timdiadiemtpquan(TenThanhPho, Quan);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimdiadiemtpquan(string TenThanhPho, string Quan, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimdiadiemtpquan(TenThanhPho, Quan, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimdiadiemtpquan(System.IAsyncResult result) {
+            return base.Channel.EndTimdiadiemtpquan(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimdiadiemtpquan(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string TenThanhPho = ((string)(inValues[0]));
+            string Quan = ((string)(inValues[1]));
+            return this.BeginTimdiadiemtpquan(TenThanhPho, Quan, callback, asyncState);
+        }
+        
+        private object[] OnEndTimdiadiemtpquan(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimdiadiemtpquan(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimdiadiemtpquanCompleted(object state) {
+            if ((this.TimdiadiemtpquanCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimdiadiemtpquanCompleted(this, new TimdiadiemtpquanCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimdiadiemtpquanAsync(string TenThanhPho, string Quan) {
+            this.TimdiadiemtpquanAsync(TenThanhPho, Quan, null);
+        }
+        
+        public void TimdiadiemtpquanAsync(string TenThanhPho, string Quan, object userState) {
+            if ((this.onBeginTimdiadiemtpquanDelegate == null)) {
+                this.onBeginTimdiadiemtpquanDelegate = new BeginOperationDelegate(this.OnBeginTimdiadiemtpquan);
+            }
+            if ((this.onEndTimdiadiemtpquanDelegate == null)) {
+                this.onEndTimdiadiemtpquanDelegate = new EndOperationDelegate(this.OnEndTimdiadiemtpquan);
+            }
+            if ((this.onTimdiadiemtpquanCompletedDelegate == null)) {
+                this.onTimdiadiemtpquanCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimdiadiemtpquanCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimdiadiemtpquanDelegate, new object[] {
+                        TenThanhPho,
+                        Quan}, this.onEndTimdiadiemtpquanDelegate, this.onTimdiadiemtpquanCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timdiadiemduong(string Duong, bool chinhxac) {
+            return base.Channel.Timdiadiemduong(Duong, chinhxac);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimdiadiemduong(string Duong, bool chinhxac, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimdiadiemduong(Duong, chinhxac, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimdiadiemduong(System.IAsyncResult result) {
+            return base.Channel.EndTimdiadiemduong(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimdiadiemduong(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Duong = ((string)(inValues[0]));
+            bool chinhxac = ((bool)(inValues[1]));
+            return this.BeginTimdiadiemduong(Duong, chinhxac, callback, asyncState);
+        }
+        
+        private object[] OnEndTimdiadiemduong(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimdiadiemduong(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimdiadiemduongCompleted(object state) {
+            if ((this.TimdiadiemduongCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimdiadiemduongCompleted(this, new TimdiadiemduongCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimdiadiemduongAsync(string Duong, bool chinhxac) {
+            this.TimdiadiemduongAsync(Duong, chinhxac, null);
+        }
+        
+        public void TimdiadiemduongAsync(string Duong, bool chinhxac, object userState) {
+            if ((this.onBeginTimdiadiemduongDelegate == null)) {
+                this.onBeginTimdiadiemduongDelegate = new BeginOperationDelegate(this.OnBeginTimdiadiemduong);
+            }
+            if ((this.onEndTimdiadiemduongDelegate == null)) {
+                this.onEndTimdiadiemduongDelegate = new EndOperationDelegate(this.OnEndTimdiadiemduong);
+            }
+            if ((this.onTimdiadiemduongCompletedDelegate == null)) {
+                this.onTimdiadiemduongCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimdiadiemduongCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimdiadiemduongDelegate, new object[] {
+                        Duong,
+                        chinhxac}, this.onEndTimdiadiemduongDelegate, this.onTimdiadiemduongCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timnguoidang(string username) {
+            return base.Channel.Timnguoidang(username);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimnguoidang(string username, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimnguoidang(username, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimnguoidang(System.IAsyncResult result) {
+            return base.Channel.EndTimnguoidang(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimnguoidang(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string username = ((string)(inValues[0]));
+            return this.BeginTimnguoidang(username, callback, asyncState);
+        }
+        
+        private object[] OnEndTimnguoidang(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimnguoidang(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimnguoidangCompleted(object state) {
+            if ((this.TimnguoidangCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimnguoidangCompleted(this, new TimnguoidangCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimnguoidangAsync(string username) {
+            this.TimnguoidangAsync(username, null);
+        }
+        
+        public void TimnguoidangAsync(string username, object userState) {
+            if ((this.onBeginTimnguoidangDelegate == null)) {
+                this.onBeginTimnguoidangDelegate = new BeginOperationDelegate(this.OnBeginTimnguoidang);
+            }
+            if ((this.onEndTimnguoidangDelegate == null)) {
+                this.onEndTimnguoidangDelegate = new EndOperationDelegate(this.OnEndTimnguoidang);
+            }
+            if ((this.onTimnguoidangCompletedDelegate == null)) {
+                this.onTimnguoidangCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimnguoidangCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimnguoidangDelegate, new object[] {
+                        username}, this.onEndTimnguoidangDelegate, this.onTimnguoidangCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timkhonggian(string Loai) {
+            return base.Channel.Timkhonggian(Loai);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimkhonggian(string Loai, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimkhonggian(Loai, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimkhonggian(System.IAsyncResult result) {
+            return base.Channel.EndTimkhonggian(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimkhonggian(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Loai = ((string)(inValues[0]));
+            return this.BeginTimkhonggian(Loai, callback, asyncState);
+        }
+        
+        private object[] OnEndTimkhonggian(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimkhonggian(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimkhonggianCompleted(object state) {
+            if ((this.TimkhonggianCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimkhonggianCompleted(this, new TimkhonggianCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimkhonggianAsync(string Loai) {
+            this.TimkhonggianAsync(Loai, null);
+        }
+        
+        public void TimkhonggianAsync(string Loai, object userState) {
+            if ((this.onBeginTimkhonggianDelegate == null)) {
+                this.onBeginTimkhonggianDelegate = new BeginOperationDelegate(this.OnBeginTimkhonggian);
+            }
+            if ((this.onEndTimkhonggianDelegate == null)) {
+                this.onEndTimkhonggianDelegate = new EndOperationDelegate(this.OnEndTimkhonggian);
+            }
+            if ((this.onTimkhonggianCompletedDelegate == null)) {
+                this.onTimkhonggianCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimkhonggianCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimkhonggianDelegate, new object[] {
+                        Loai}, this.onEndTimkhonggianDelegate, this.onTimkhonggianCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timmonan(string MonAn) {
+            return base.Channel.Timmonan(MonAn);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimmonan(string MonAn, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimmonan(MonAn, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimmonan(System.IAsyncResult result) {
+            return base.Channel.EndTimmonan(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimmonan(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string MonAn = ((string)(inValues[0]));
+            return this.BeginTimmonan(MonAn, callback, asyncState);
+        }
+        
+        private object[] OnEndTimmonan(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimmonan(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimmonanCompleted(object state) {
+            if ((this.TimmonanCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimmonanCompleted(this, new TimmonanCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimmonanAsync(string MonAn) {
+            this.TimmonanAsync(MonAn, null);
+        }
+        
+        public void TimmonanAsync(string MonAn, object userState) {
+            if ((this.onBeginTimmonanDelegate == null)) {
+                this.onBeginTimmonanDelegate = new BeginOperationDelegate(this.OnBeginTimmonan);
+            }
+            if ((this.onEndTimmonanDelegate == null)) {
+                this.onEndTimmonanDelegate = new EndOperationDelegate(this.OnEndTimmonan);
+            }
+            if ((this.onTimmonanCompletedDelegate == null)) {
+                this.onTimmonanCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimmonanCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimmonanDelegate, new object[] {
+                        MonAn}, this.onEndTimmonanDelegate, this.onTimmonanCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timnhucau(string MucDich) {
+            return base.Channel.Timnhucau(MucDich);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimnhucau(string MucDich, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimnhucau(MucDich, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimnhucau(System.IAsyncResult result) {
+            return base.Channel.EndTimnhucau(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimnhucau(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string MucDich = ((string)(inValues[0]));
+            return this.BeginTimnhucau(MucDich, callback, asyncState);
+        }
+        
+        private object[] OnEndTimnhucau(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimnhucau(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimnhucauCompleted(object state) {
+            if ((this.TimnhucauCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimnhucauCompleted(this, new TimnhucauCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimnhucauAsync(string MucDich) {
+            this.TimnhucauAsync(MucDich, null);
+        }
+        
+        public void TimnhucauAsync(string MucDich, object userState) {
+            if ((this.onBeginTimnhucauDelegate == null)) {
+                this.onBeginTimnhucauDelegate = new BeginOperationDelegate(this.OnBeginTimnhucau);
+            }
+            if ((this.onEndTimnhucauDelegate == null)) {
+                this.onEndTimnhucauDelegate = new EndOperationDelegate(this.OnEndTimnhucau);
+            }
+            if ((this.onTimnhucauCompletedDelegate == null)) {
+                this.onTimnhucauCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimnhucauCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimnhucauDelegate, new object[] {
+                        MucDich}, this.onEndTimnhucauDelegate, this.onTimnhucauCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timgia(int GiaTu, int GiaDen) {
+            return base.Channel.Timgia(GiaTu, GiaDen);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimgia(int GiaTu, int GiaDen, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimgia(GiaTu, GiaDen, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimgia(System.IAsyncResult result) {
+            return base.Channel.EndTimgia(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimgia(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int GiaTu = ((int)(inValues[0]));
+            int GiaDen = ((int)(inValues[1]));
+            return this.BeginTimgia(GiaTu, GiaDen, callback, asyncState);
+        }
+        
+        private object[] OnEndTimgia(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimgia(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimgiaCompleted(object state) {
+            if ((this.TimgiaCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimgiaCompleted(this, new TimgiaCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimgiaAsync(int GiaTu, int GiaDen) {
+            this.TimgiaAsync(GiaTu, GiaDen, null);
+        }
+        
+        public void TimgiaAsync(int GiaTu, int GiaDen, object userState) {
+            if ((this.onBeginTimgiaDelegate == null)) {
+                this.onBeginTimgiaDelegate = new BeginOperationDelegate(this.OnBeginTimgia);
+            }
+            if ((this.onEndTimgiaDelegate == null)) {
+                this.onEndTimgiaDelegate = new EndOperationDelegate(this.OnEndTimgia);
+            }
+            if ((this.onTimgiaCompletedDelegate == null)) {
+                this.onTimgiaCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimgiaCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimgiaDelegate, new object[] {
+                        GiaTu,
+                        GiaDen}, this.onEndTimgiaDelegate, this.onTimgiaCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF[] Timkhuyenmai(string Loai) {
+            return base.Channel.Timkhuyenmai(Loai);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTimkhuyenmai(string Loai, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTimkhuyenmai(Loai, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF[] EndTimkhuyenmai(System.IAsyncResult result) {
+            return base.Channel.EndTimkhuyenmai(result);
+        }
+        
+        private System.IAsyncResult OnBeginTimkhuyenmai(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Loai = ((string)(inValues[0]));
+            return this.BeginTimkhuyenmai(Loai, callback, asyncState);
+        }
+        
+        private object[] OnEndTimkhuyenmai(System.IAsyncResult result) {
+            Server.NHCF[] retVal = this.EndTimkhuyenmai(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTimkhuyenmaiCompleted(object state) {
+            if ((this.TimkhuyenmaiCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TimkhuyenmaiCompleted(this, new TimkhuyenmaiCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TimkhuyenmaiAsync(string Loai) {
+            this.TimkhuyenmaiAsync(Loai, null);
+        }
+        
+        public void TimkhuyenmaiAsync(string Loai, object userState) {
+            if ((this.onBeginTimkhuyenmaiDelegate == null)) {
+                this.onBeginTimkhuyenmaiDelegate = new BeginOperationDelegate(this.OnBeginTimkhuyenmai);
+            }
+            if ((this.onEndTimkhuyenmaiDelegate == null)) {
+                this.onEndTimkhuyenmaiDelegate = new EndOperationDelegate(this.OnEndTimkhuyenmai);
+            }
+            if ((this.onTimkhuyenmaiCompletedDelegate == null)) {
+                this.onTimkhuyenmaiCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTimkhuyenmaiCompleted);
+            }
+            base.InvokeAsync(this.onBeginTimkhuyenmaiDelegate, new object[] {
+                        Loai}, this.onEndTimkhuyenmaiDelegate, this.onTimkhuyenmaiCompletedDelegate, userState);
+        }
+        
+        public Server.NHCF GetNHCF(int Id, Server.NHCF[] nhahang) {
+            return base.Channel.GetNHCF(Id, nhahang);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetNHCF(int Id, Server.NHCF[] nhahang, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetNHCF(Id, nhahang, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.NHCF EndGetNHCF(System.IAsyncResult result) {
+            return base.Channel.EndGetNHCF(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetNHCF(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int Id = ((int)(inValues[0]));
+            Server.NHCF[] nhahang = ((Server.NHCF[])(inValues[1]));
+            return this.BeginGetNHCF(Id, nhahang, callback, asyncState);
+        }
+        
+        private object[] OnEndGetNHCF(System.IAsyncResult result) {
+            Server.NHCF retVal = this.EndGetNHCF(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetNHCFCompleted(object state) {
+            if ((this.GetNHCFCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetNHCFCompleted(this, new GetNHCFCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetNHCFAsync(int Id, Server.NHCF[] nhahang) {
+            this.GetNHCFAsync(Id, nhahang, null);
+        }
+        
+        public void GetNHCFAsync(int Id, Server.NHCF[] nhahang, object userState) {
+            if ((this.onBeginGetNHCFDelegate == null)) {
+                this.onBeginGetNHCFDelegate = new BeginOperationDelegate(this.OnBeginGetNHCF);
+            }
+            if ((this.onEndGetNHCFDelegate == null)) {
+                this.onEndGetNHCFDelegate = new EndOperationDelegate(this.OnEndGetNHCF);
+            }
+            if ((this.onGetNHCFCompletedDelegate == null)) {
+                this.onGetNHCFCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetNHCFCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetNHCFDelegate, new object[] {
+                        Id,
+                        nhahang}, this.onEndGetNHCFDelegate, this.onGetNHCFCompletedDelegate, userState);
+        }
+        
+        public bool HasNHCF(int Id, Server.NHCF[] nhahang) {
+            return base.Channel.HasNHCF(Id, nhahang);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginHasNHCF(int Id, Server.NHCF[] nhahang, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginHasNHCF(Id, nhahang, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndHasNHCF(System.IAsyncResult result) {
+            return base.Channel.EndHasNHCF(result);
+        }
+        
+        private System.IAsyncResult OnBeginHasNHCF(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int Id = ((int)(inValues[0]));
+            Server.NHCF[] nhahang = ((Server.NHCF[])(inValues[1]));
+            return this.BeginHasNHCF(Id, nhahang, callback, asyncState);
+        }
+        
+        private object[] OnEndHasNHCF(System.IAsyncResult result) {
+            bool retVal = this.EndHasNHCF(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnHasNHCFCompleted(object state) {
+            if ((this.HasNHCFCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.HasNHCFCompleted(this, new HasNHCFCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void HasNHCFAsync(int Id, Server.NHCF[] nhahang) {
+            this.HasNHCFAsync(Id, nhahang, null);
+        }
+        
+        public void HasNHCFAsync(int Id, Server.NHCF[] nhahang, object userState) {
+            if ((this.onBeginHasNHCFDelegate == null)) {
+                this.onBeginHasNHCFDelegate = new BeginOperationDelegate(this.OnBeginHasNHCF);
+            }
+            if ((this.onEndHasNHCFDelegate == null)) {
+                this.onEndHasNHCFDelegate = new EndOperationDelegate(this.OnEndHasNHCF);
+            }
+            if ((this.onHasNHCFCompletedDelegate == null)) {
+                this.onHasNHCFCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnHasNHCFCompleted);
+            }
+            base.InvokeAsync(this.onBeginHasNHCFDelegate, new object[] {
+                        Id,
+                        nhahang}, this.onEndHasNHCFDelegate, this.onHasNHCFCompletedDelegate, userState);
+        }
+        
+        public Server.ThucDon[] GetMenu(int IdNhaHang) {
+            return base.Channel.GetMenu(IdNhaHang);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetMenu(int IdNhaHang, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetMenu(IdNhaHang, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.ThucDon[] EndGetMenu(System.IAsyncResult result) {
+            return base.Channel.EndGetMenu(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetMenu(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int IdNhaHang = ((int)(inValues[0]));
+            return this.BeginGetMenu(IdNhaHang, callback, asyncState);
+        }
+        
+        private object[] OnEndGetMenu(System.IAsyncResult result) {
+            Server.ThucDon[] retVal = this.EndGetMenu(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetMenuCompleted(object state) {
+            if ((this.GetMenuCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetMenuCompleted(this, new GetMenuCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetMenuAsync(int IdNhaHang) {
+            this.GetMenuAsync(IdNhaHang, null);
+        }
+        
+        public void GetMenuAsync(int IdNhaHang, object userState) {
+            if ((this.onBeginGetMenuDelegate == null)) {
+                this.onBeginGetMenuDelegate = new BeginOperationDelegate(this.OnBeginGetMenu);
+            }
+            if ((this.onEndGetMenuDelegate == null)) {
+                this.onEndGetMenuDelegate = new EndOperationDelegate(this.OnEndGetMenu);
+            }
+            if ((this.onGetMenuCompletedDelegate == null)) {
+                this.onGetMenuCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetMenuCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetMenuDelegate, new object[] {
+                        IdNhaHang}, this.onEndGetMenuDelegate, this.onGetMenuCompletedDelegate, userState);
+        }
+        
+        public Server.KhuyenMai GetKhuyenMai(int IdNhaHang) {
+            return base.Channel.GetKhuyenMai(IdNhaHang);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetKhuyenMai(int IdNhaHang, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetKhuyenMai(IdNhaHang, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.KhuyenMai EndGetKhuyenMai(System.IAsyncResult result) {
+            return base.Channel.EndGetKhuyenMai(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetKhuyenMai(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int IdNhaHang = ((int)(inValues[0]));
+            return this.BeginGetKhuyenMai(IdNhaHang, callback, asyncState);
+        }
+        
+        private object[] OnEndGetKhuyenMai(System.IAsyncResult result) {
+            Server.KhuyenMai retVal = this.EndGetKhuyenMai(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetKhuyenMaiCompleted(object state) {
+            if ((this.GetKhuyenMaiCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetKhuyenMaiCompleted(this, new GetKhuyenMaiCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetKhuyenMaiAsync(int IdNhaHang) {
+            this.GetKhuyenMaiAsync(IdNhaHang, null);
+        }
+        
+        public void GetKhuyenMaiAsync(int IdNhaHang, object userState) {
+            if ((this.onBeginGetKhuyenMaiDelegate == null)) {
+                this.onBeginGetKhuyenMaiDelegate = new BeginOperationDelegate(this.OnBeginGetKhuyenMai);
+            }
+            if ((this.onEndGetKhuyenMaiDelegate == null)) {
+                this.onEndGetKhuyenMaiDelegate = new EndOperationDelegate(this.OnEndGetKhuyenMai);
+            }
+            if ((this.onGetKhuyenMaiCompletedDelegate == null)) {
+                this.onGetKhuyenMaiCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetKhuyenMaiCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetKhuyenMaiDelegate, new object[] {
+                        IdNhaHang}, this.onEndGetKhuyenMaiDelegate, this.onGetKhuyenMaiCompletedDelegate, userState);
+        }
+        
+        public Server.GopY[] GetGopY(int IdNhaHang) {
+            return base.Channel.GetGopY(IdNhaHang);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetGopY(int IdNhaHang, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetGopY(IdNhaHang, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public Server.GopY[] EndGetGopY(System.IAsyncResult result) {
+            return base.Channel.EndGetGopY(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetGopY(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int IdNhaHang = ((int)(inValues[0]));
+            return this.BeginGetGopY(IdNhaHang, callback, asyncState);
+        }
+        
+        private object[] OnEndGetGopY(System.IAsyncResult result) {
+            Server.GopY[] retVal = this.EndGetGopY(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetGopYCompleted(object state) {
+            if ((this.GetGopYCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetGopYCompleted(this, new GetGopYCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetGopYAsync(int IdNhaHang) {
+            this.GetGopYAsync(IdNhaHang, null);
+        }
+        
+        public void GetGopYAsync(int IdNhaHang, object userState) {
+            if ((this.onBeginGetGopYDelegate == null)) {
+                this.onBeginGetGopYDelegate = new BeginOperationDelegate(this.OnBeginGetGopY);
+            }
+            if ((this.onEndGetGopYDelegate == null)) {
+                this.onEndGetGopYDelegate = new EndOperationDelegate(this.OnEndGetGopY);
+            }
+            if ((this.onGetGopYCompletedDelegate == null)) {
+                this.onGetGopYCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetGopYCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetGopYDelegate, new object[] {
+                        IdNhaHang}, this.onEndGetGopYDelegate, this.onGetGopYCompletedDelegate, userState);
+        }
+        
+        public string GopY(int IdNhaHang, string TaiKhoan, string NoiDung, string NgayGopY) {
+            return base.Channel.GopY(IdNhaHang, TaiKhoan, NoiDung, NgayGopY);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGopY(int IdNhaHang, string TaiKhoan, string NoiDung, string NgayGopY, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGopY(IdNhaHang, TaiKhoan, NoiDung, NgayGopY, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndGopY(System.IAsyncResult result) {
+            return base.Channel.EndGopY(result);
+        }
+        
+        private System.IAsyncResult OnBeginGopY(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int IdNhaHang = ((int)(inValues[0]));
+            string TaiKhoan = ((string)(inValues[1]));
+            string NoiDung = ((string)(inValues[2]));
+            string NgayGopY = ((string)(inValues[3]));
+            return this.BeginGopY(IdNhaHang, TaiKhoan, NoiDung, NgayGopY, callback, asyncState);
+        }
+        
+        private object[] OnEndGopY(System.IAsyncResult result) {
+            string retVal = this.EndGopY(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGopYCompleted(object state) {
+            if ((this.GopYCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GopYCompleted(this, new GopYCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GopYAsync(int IdNhaHang, string TaiKhoan, string NoiDung, string NgayGopY) {
+            this.GopYAsync(IdNhaHang, TaiKhoan, NoiDung, NgayGopY, null);
+        }
+        
+        public void GopYAsync(int IdNhaHang, string TaiKhoan, string NoiDung, string NgayGopY, object userState) {
+            if ((this.onBeginGopYDelegate == null)) {
+                this.onBeginGopYDelegate = new BeginOperationDelegate(this.OnBeginGopY);
+            }
+            if ((this.onEndGopYDelegate == null)) {
+                this.onEndGopYDelegate = new EndOperationDelegate(this.OnEndGopY);
+            }
+            if ((this.onGopYCompletedDelegate == null)) {
+                this.onGopYCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGopYCompleted);
+            }
+            base.InvokeAsync(this.onBeginGopYDelegate, new object[] {
+                        IdNhaHang,
+                        TaiKhoan,
+                        NoiDung,
+                        NgayGopY}, this.onEndGopYDelegate, this.onGopYCompletedDelegate, userState);
+        }
+        
+        public string DatBan(int IdNhaHang, string TaiKhoan, int SoCho, string ThoiGian, string DichVu, string DienThoai) {
+            return base.Channel.DatBan(IdNhaHang, TaiKhoan, SoCho, ThoiGian, DichVu, DienThoai);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDatBan(int IdNhaHang, string TaiKhoan, int SoCho, string ThoiGian, string DichVu, string DienThoai, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDatBan(IdNhaHang, TaiKhoan, SoCho, ThoiGian, DichVu, DienThoai, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndDatBan(System.IAsyncResult result) {
+            return base.Channel.EndDatBan(result);
+        }
+        
+        private System.IAsyncResult OnBeginDatBan(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int IdNhaHang = ((int)(inValues[0]));
+            string TaiKhoan = ((string)(inValues[1]));
+            int SoCho = ((int)(inValues[2]));
+            string ThoiGian = ((string)(inValues[3]));
+            string DichVu = ((string)(inValues[4]));
+            string DienThoai = ((string)(inValues[5]));
+            return this.BeginDatBan(IdNhaHang, TaiKhoan, SoCho, ThoiGian, DichVu, DienThoai, callback, asyncState);
+        }
+        
+        private object[] OnEndDatBan(System.IAsyncResult result) {
+            string retVal = this.EndDatBan(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDatBanCompleted(object state) {
+            if ((this.DatBanCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DatBanCompleted(this, new DatBanCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DatBanAsync(int IdNhaHang, string TaiKhoan, int SoCho, string ThoiGian, string DichVu, string DienThoai) {
+            this.DatBanAsync(IdNhaHang, TaiKhoan, SoCho, ThoiGian, DichVu, DienThoai, null);
+        }
+        
+        public void DatBanAsync(int IdNhaHang, string TaiKhoan, int SoCho, string ThoiGian, string DichVu, string DienThoai, object userState) {
+            if ((this.onBeginDatBanDelegate == null)) {
+                this.onBeginDatBanDelegate = new BeginOperationDelegate(this.OnBeginDatBan);
+            }
+            if ((this.onEndDatBanDelegate == null)) {
+                this.onEndDatBanDelegate = new EndOperationDelegate(this.OnEndDatBan);
+            }
+            if ((this.onDatBanCompletedDelegate == null)) {
+                this.onDatBanCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDatBanCompleted);
+            }
+            base.InvokeAsync(this.onBeginDatBanDelegate, new object[] {
+                        IdNhaHang,
+                        TaiKhoan,
+                        SoCho,
+                        ThoiGian,
+                        DichVu,
+                        DienThoai}, this.onEndDatBanDelegate, this.onDatBanCompletedDelegate, userState);
+        }
+        
+        public string DangNHCF(Server.NHCF NhaHang, int IdQuan, int IdThanhPho, string username) {
+            return base.Channel.DangNHCF(NhaHang, IdQuan, IdThanhPho, username);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDangNHCF(Server.NHCF NhaHang, int IdQuan, int IdThanhPho, string username, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDangNHCF(NhaHang, IdQuan, IdThanhPho, username, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndDangNHCF(System.IAsyncResult result) {
+            return base.Channel.EndDangNHCF(result);
+        }
+        
+        private System.IAsyncResult OnBeginDangNHCF(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Server.NHCF NhaHang = ((Server.NHCF)(inValues[0]));
+            int IdQuan = ((int)(inValues[1]));
+            int IdThanhPho = ((int)(inValues[2]));
+            string username = ((string)(inValues[3]));
+            return this.BeginDangNHCF(NhaHang, IdQuan, IdThanhPho, username, callback, asyncState);
+        }
+        
+        private object[] OnEndDangNHCF(System.IAsyncResult result) {
+            string retVal = this.EndDangNHCF(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDangNHCFCompleted(object state) {
+            if ((this.DangNHCFCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DangNHCFCompleted(this, new DangNHCFCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DangNHCFAsync(Server.NHCF NhaHang, int IdQuan, int IdThanhPho, string username) {
+            this.DangNHCFAsync(NhaHang, IdQuan, IdThanhPho, username, null);
+        }
+        
+        public void DangNHCFAsync(Server.NHCF NhaHang, int IdQuan, int IdThanhPho, string username, object userState) {
+            if ((this.onBeginDangNHCFDelegate == null)) {
+                this.onBeginDangNHCFDelegate = new BeginOperationDelegate(this.OnBeginDangNHCF);
+            }
+            if ((this.onEndDangNHCFDelegate == null)) {
+                this.onEndDangNHCFDelegate = new EndOperationDelegate(this.OnEndDangNHCF);
+            }
+            if ((this.onDangNHCFCompletedDelegate == null)) {
+                this.onDangNHCFCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDangNHCFCompleted);
+            }
+            base.InvokeAsync(this.onBeginDangNHCFDelegate, new object[] {
+                        NhaHang,
+                        IdQuan,
+                        IdThanhPho,
+                        username}, this.onEndDangNHCFDelegate, this.onDangNHCFCompletedDelegate, userState);
+        }
+        
+        public string DangThucDon(Server.ThucDon menu) {
+            return base.Channel.DangThucDon(menu);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDangThucDon(Server.ThucDon menu, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDangThucDon(menu, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndDangThucDon(System.IAsyncResult result) {
+            return base.Channel.EndDangThucDon(result);
+        }
+        
+        private System.IAsyncResult OnBeginDangThucDon(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Server.ThucDon menu = ((Server.ThucDon)(inValues[0]));
+            return this.BeginDangThucDon(menu, callback, asyncState);
+        }
+        
+        private object[] OnEndDangThucDon(System.IAsyncResult result) {
+            string retVal = this.EndDangThucDon(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDangThucDonCompleted(object state) {
+            if ((this.DangThucDonCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DangThucDonCompleted(this, new DangThucDonCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DangThucDonAsync(Server.ThucDon menu) {
+            this.DangThucDonAsync(menu, null);
+        }
+        
+        public void DangThucDonAsync(Server.ThucDon menu, object userState) {
+            if ((this.onBeginDangThucDonDelegate == null)) {
+                this.onBeginDangThucDonDelegate = new BeginOperationDelegate(this.OnBeginDangThucDon);
+            }
+            if ((this.onEndDangThucDonDelegate == null)) {
+                this.onEndDangThucDonDelegate = new EndOperationDelegate(this.OnEndDangThucDon);
+            }
+            if ((this.onDangThucDonCompletedDelegate == null)) {
+                this.onDangThucDonCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDangThucDonCompleted);
+            }
+            base.InvokeAsync(this.onBeginDangThucDonDelegate, new object[] {
+                        menu}, this.onEndDangThucDonDelegate, this.onDangThucDonCompletedDelegate, userState);
+        }
+        
+        public string DangKhuyenMai(Server.KhuyenMai khmai) {
+            return base.Channel.DangKhuyenMai(khmai);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDangKhuyenMai(Server.KhuyenMai khmai, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDangKhuyenMai(khmai, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndDangKhuyenMai(System.IAsyncResult result) {
+            return base.Channel.EndDangKhuyenMai(result);
+        }
+        
+        private System.IAsyncResult OnBeginDangKhuyenMai(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            Server.KhuyenMai khmai = ((Server.KhuyenMai)(inValues[0]));
+            return this.BeginDangKhuyenMai(khmai, callback, asyncState);
+        }
+        
+        private object[] OnEndDangKhuyenMai(System.IAsyncResult result) {
+            string retVal = this.EndDangKhuyenMai(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDangKhuyenMaiCompleted(object state) {
+            if ((this.DangKhuyenMaiCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DangKhuyenMaiCompleted(this, new DangKhuyenMaiCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DangKhuyenMaiAsync(Server.KhuyenMai khmai) {
+            this.DangKhuyenMaiAsync(khmai, null);
+        }
+        
+        public void DangKhuyenMaiAsync(Server.KhuyenMai khmai, object userState) {
+            if ((this.onBeginDangKhuyenMaiDelegate == null)) {
+                this.onBeginDangKhuyenMaiDelegate = new BeginOperationDelegate(this.OnBeginDangKhuyenMai);
+            }
+            if ((this.onEndDangKhuyenMaiDelegate == null)) {
+                this.onEndDangKhuyenMaiDelegate = new EndOperationDelegate(this.OnEndDangKhuyenMai);
+            }
+            if ((this.onDangKhuyenMaiCompletedDelegate == null)) {
+                this.onDangKhuyenMaiCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDangKhuyenMaiCompleted);
+            }
+            base.InvokeAsync(this.onBeginDangKhuyenMaiDelegate, new object[] {
+                        khmai}, this.onEndDangKhuyenMaiDelegate, this.onDangKhuyenMaiCompletedDelegate, userState);
         }
     }
 }

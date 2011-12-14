@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dde8f065-41af-483f-b5ac-e0f58601db07" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c41c04b3-5e5f-453a-b493-ef34b579da16" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,10 +21,12 @@
     <MetadataSource Address="http://localhost:8000/BasicHttpBinding" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BasicHttpBinding.xsd" MetadataType="Schema" ID="0e83240e-adbd-42e9-9d81-2e60e9150a79" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?xsd=xsd1" />
-    <MetadataFile FileName="BasicHttpBinding.disco" MetadataType="Disco" ID="dc857c5e-9503-4c77-aac0-4edbe5bc3bf2" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?disco" />
-    <MetadataFile FileName="BasicHttpBinding1.xsd" MetadataType="Schema" ID="b66c3200-bd09-496b-91f4-63c39d147f00" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?xsd=xsd0" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="7df866e2-23ca-4310-8cdb-4be12deb3b72" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?wsdl" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="5bcb906f-c1aa-45b8-8b6e-d6aacd06d1f9" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?wsdl" />
+    <MetadataFile FileName="BasicHttpBinding.xsd" MetadataType="Schema" ID="e212a5d3-6625-4c98-91b7-1dcbd59b535e" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?xsd=xsd1" />
+    <MetadataFile FileName="BasicHttpBinding.disco" MetadataType="Disco" ID="54433fb8-90f4-49de-9483-08f2b1c4638b" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?disco" />
+    <MetadataFile FileName="BasicHttpBinding1.xsd" MetadataType="Schema" ID="d9bc7084-a17e-41d2-a5ac-9647f65f6e7b" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?xsd=xsd3" />
+    <MetadataFile FileName="BasicHttpBinding2.xsd" MetadataType="Schema" ID="b702de50-6dd8-49ae-ad22-c125414cf7bd" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?xsd=xsd2" />
+    <MetadataFile FileName="BasicHttpBinding3.xsd" MetadataType="Schema" ID="3be07073-aa04-4b75-8bcd-2de99d1dea58" SourceId="1" SourceUrl="http://localhost:8000/BasicHttpBinding?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -13,76 +13,53 @@ namespace Client
 {
     public partial class Form1 : Form
     {
-        IService1 Client = null;
+        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void bt_Start_Click(object sender, EventArgs e)
+        private void bt_DangKy_Click(object sender, EventArgs e)
+        {
+            DangKy dk = new DangKy(this);
+            dk.Show();
+        }
+
+        private void bt_DangNhap_Click(object sender, EventArgs e)
+        {
+            if (tb_User.Text.Count() != 0 && tb_Pass.Text.Count() != 0)
+            {
+                client.UserdangnhapCompleted += new EventHandler<ServiceReference1.UserdangnhapCompletedEventArgs>(UserdangnhapCallBack);
+                client.UserdangnhapAsync(tb_User.Text, tb_Pass.Text);
+            }
+            else
+                MessageBox.Show("Vui lòng điền thông tin đăng nhập !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public static string username;
+        void UserdangnhapCallBack(object sender, ServiceReference1.UserdangnhapCompletedEventArgs e)
         {
             try
             {
-                if (ds_KetNoi.SelectedIndex == 0)
+                if (e.Result == false)
+                    MessageBox.Show("Đăng nhập thất bại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
                 {
-                    EndpointAddress address = new EndpointAddress(new Uri("http://localhost:8000/BasicHttpBinding"));
-                    BasicHttpBinding binding = new BasicHttpBinding();
-                    ChannelFactory<IService1> factory = new ChannelFactory<IService1>(binding, address);
-                    Client = factory.CreateChannel();
-                    string authors = Client.GetAuthors();
-                    if (authors != null)
-                    {
-                        textBox1.Text = authors;
-                    }
-                }
-                else if (ds_KetNoi.SelectedIndex == 1)
-                {
-                    EndpointAddress address = new EndpointAddress(new Uri("http://localhost:8000/WSHttpBinding"));
-                    WSHttpBinding binding = new WSHttpBinding();
-                    ChannelFactory<IService1> factory = new ChannelFactory<IService1>(binding, address);
-                    Client = factory.CreateChannel();
-                    string authors = Client.GetAuthors();
-                    if (authors != null)
-                    {
-                        textBox1.Text = authors;
-                    }
-                }
-                else if (ds_KetNoi.SelectedIndex == 2)
-                {
-                    EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:2020/NetTcpBinding"));
-                    NetTcpBinding binding = new NetTcpBinding();
-                    ChannelFactory<IService1> factory = new ChannelFactory<IService1>(binding, address);
-                    Client = factory.CreateChannel();
-                    string authors = Client.GetAuthors();
-                    if (authors != null)
-                    {
-                        textBox1.Text = authors;
-                    }
+                    MessageBox.Show("Đăng nhập thành công!");
+                    username = tb_User.Text;
+                    DichVu dv = new DichVu();
+                    dv.Show();
+                    this.Hide();
                 }
             }
-            catch (System.Exception ex)
+            catch (ArgumentException exp)
             {
-                MessageBox.Show("Không kết nối được !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textBox1.Text = "";
+                MessageBox.Show(exp.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Dịch vụ Lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void bt_Asynchronous_Click(object sender, EventArgs e)
-        {
-            ServiceReference1.Service1Client Basic = new ServiceReference1.Service1Client();
-            Basic.GetAuthorsCompleted += new EventHandler<ServiceReference1.GetAuthorsCompletedEventArgs>(GetAuthors1);
-            Basic.GetAuthorsAsync();
-        }
-        void GetAuthors1(Object sender, ServiceReference1.GetAuthorsCompletedEventArgs e)
-        {
-            try
-            {
-                textBox1.Text = e.Result;
-            }
-            catch (System.Exception ex)
-            {
-
-            }
-        }
     }
 }

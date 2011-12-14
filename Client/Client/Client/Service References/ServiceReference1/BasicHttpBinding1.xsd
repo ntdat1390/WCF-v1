@@ -1,15 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="GetAuthors">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetAuthorsResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="GetAuthorsResult" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Server" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Server" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/BasicHttpBinding?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="KiemTraLoi">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="KiemTraLoi" nillable="true" type="tns:KiemTraLoi" />
+  <xs:complexType name="ArrayOfNHCF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NHCF" nillable="true" type="tns:NHCF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNHCF" nillable="true" type="tns:ArrayOfNHCF" />
+  <xs:complexType name="NHCF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BaiDoXe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DatChoTruoc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DienThoai" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duong" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GioPhucVu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="KhongGian" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoaiHinh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MucDich" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NgonNgu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phuong" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Quan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SoCho" type="xs:int" />
+      <xs:element minOccurs="0" name="SoNha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenNhaHang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThanhPho" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThanhToan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WebSite" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NHCF" nillable="true" type="tns:NHCF" />
+  <xs:complexType name="CustomFaultMsg">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CustomFaultMsg" nillable="true" type="tns:CustomFaultMsg" />
+  <xs:complexType name="ArrayOfThucDon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThucDon" nillable="true" type="tns:ThucDon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThucDon" nillable="true" type="tns:ArrayOfThucDon" />
+  <xs:complexType name="ThucDon">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gia" type="xs:int" />
+      <xs:element minOccurs="0" name="IdNhaHang" type="xs:int" />
+      <xs:element minOccurs="0" name="MonAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NguyenLieu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhuongPhap" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThucDon" nillable="true" type="tns:ThucDon" />
+  <xs:complexType name="KhuyenMai">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdNhaHang" type="xs:int" />
+      <xs:element minOccurs="0" name="TenKhuyenMai" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThoiGianEnd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThoiGianStart" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThongTin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KhuyenMai" nillable="true" type="tns:KhuyenMai" />
+  <xs:complexType name="ArrayOfGopY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GopY" nillable="true" type="tns:GopY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGopY" nillable="true" type="tns:ArrayOfGopY" />
+  <xs:complexType name="GopY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdNhaHang" type="xs:int" />
+      <xs:element minOccurs="0" name="NgayGopY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NoiDung" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenTaiKhoan" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GopY" nillable="true" type="tns:GopY" />
 </xs:schema>

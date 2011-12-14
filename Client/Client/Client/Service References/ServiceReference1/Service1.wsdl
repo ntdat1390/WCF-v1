@@ -4,6 +4,8 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8000/BasicHttpBinding?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8000/BasicHttpBinding?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/BasicHttpBinding?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:8000/BasicHttpBinding?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Server" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetAuthors_InputMessage">
@@ -12,10 +14,288 @@
   <wsdl:message name="IService1_GetAuthors_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAuthorsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_Userdangky_InputMessage">
+    <wsdl:part name="parameters" element="tns:Userdangky" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Userdangky_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserdangkyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Userdangky_KiemTraLoiFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Server" name="detail" element="q1:KiemTraLoi" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Userdangnhap_InputMessage">
+    <wsdl:part name="parameters" element="tns:Userdangnhap" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Userdangnhap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserdangnhapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadNHCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadNHCF" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadNHCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadNHCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadTP" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadQuan_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadQuan" />
+  </wsdl:message>
+  <wsdl:message name="IService1_LoadQuan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadQuanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timdiadiem_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timdiadiem" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timdiadiem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimdiadiemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timdiadiemtp_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timdiadiemtp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timdiadiemtp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimdiadiemtpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timdiadiemtpquan_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timdiadiemtpquan" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timdiadiemtpquan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimdiadiemtpquanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timdiadiemduong_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timdiadiemduong" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timdiadiemduong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimdiadiemduongResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timnguoidang_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timnguoidang" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timnguoidang_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimnguoidangResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timkhonggian_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timkhonggian" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timkhonggian_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimkhonggianResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timmonan_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timmonan" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timmonan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimmonanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timnhucau_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timnhucau" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timnhucau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimnhucauResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timgia_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timgia" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timgia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimgiaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timkhuyenmai_InputMessage">
+    <wsdl:part name="parameters" element="tns:Timkhuyenmai" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Timkhuyenmai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TimkhuyenmaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNHCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNHCF" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNHCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNHCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetNHCF_CustomFaultMsgFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Server" name="detail" element="q2:CustomFaultMsg" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HasNHCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:HasNHCF" />
+  </wsdl:message>
+  <wsdl:message name="IService1_HasNHCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HasNHCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMenu_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenu" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMenu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMenuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetKhuyenMai_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKhuyenMai" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetKhuyenMai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKhuyenMaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetGopY_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGopY" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetGopY_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGopYResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GopY_InputMessage">
+    <wsdl:part name="parameters" element="tns:GopY" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GopY_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GopYResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GopY_KiemTraLoiFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Server" name="detail" element="q3:KiemTraLoi" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DatBan_InputMessage">
+    <wsdl:part name="parameters" element="tns:DatBan" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DatBan_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DatBanResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DatBan_KiemTraLoiFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Server" name="detail" element="q4:KiemTraLoi" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangNHCF_InputMessage">
+    <wsdl:part name="parameters" element="tns:DangNHCF" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangNHCF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DangNHCFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangNHCF_KiemTraLoiFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Server" name="detail" element="q5:KiemTraLoi" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangThucDon_InputMessage">
+    <wsdl:part name="parameters" element="tns:DangThucDon" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangThucDon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DangThucDonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangThucDon_KiemTraLoiFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/Server" name="detail" element="q6:KiemTraLoi" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangKhuyenMai_InputMessage">
+    <wsdl:part name="parameters" element="tns:DangKhuyenMai" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangKhuyenMai_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DangKhuyenMaiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DangKhuyenMai_KiemTraLoiFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/Server" name="detail" element="q7:KiemTraLoi" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetAuthors">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAuthors" message="tns:IService1_GetAuthors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAuthorsResponse" message="tns:IService1_GetAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Userdangky">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Userdangky" message="tns:IService1_Userdangky_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UserdangkyResponse" message="tns:IService1_Userdangky_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/UserdangkyKiemTraLoiFault" name="KiemTraLoiFault" message="tns:IService1_Userdangky_KiemTraLoiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Userdangnhap">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Userdangnhap" message="tns:IService1_Userdangnhap_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UserdangnhapResponse" message="tns:IService1_Userdangnhap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadNHCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadNHCF" message="tns:IService1_LoadNHCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadNHCFResponse" message="tns:IService1_LoadNHCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadTP" message="tns:IService1_LoadTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadTPResponse" message="tns:IService1_LoadTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadQuan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/LoadQuan" message="tns:IService1_LoadQuan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoadQuanResponse" message="tns:IService1_LoadQuan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timdiadiem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timdiadiem" message="tns:IService1_Timdiadiem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimdiadiemResponse" message="tns:IService1_Timdiadiem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timdiadiemtp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timdiadiemtp" message="tns:IService1_Timdiadiemtp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimdiadiemtpResponse" message="tns:IService1_Timdiadiemtp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timdiadiemtpquan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timdiadiemtpquan" message="tns:IService1_Timdiadiemtpquan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimdiadiemtpquanResponse" message="tns:IService1_Timdiadiemtpquan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timdiadiemduong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timdiadiemduong" message="tns:IService1_Timdiadiemduong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimdiadiemduongResponse" message="tns:IService1_Timdiadiemduong_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timnguoidang">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timnguoidang" message="tns:IService1_Timnguoidang_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimnguoidangResponse" message="tns:IService1_Timnguoidang_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timkhonggian">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timkhonggian" message="tns:IService1_Timkhonggian_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimkhonggianResponse" message="tns:IService1_Timkhonggian_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timmonan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timmonan" message="tns:IService1_Timmonan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimmonanResponse" message="tns:IService1_Timmonan_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timnhucau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timnhucau" message="tns:IService1_Timnhucau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimnhucauResponse" message="tns:IService1_Timnhucau_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timgia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timgia" message="tns:IService1_Timgia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimgiaResponse" message="tns:IService1_Timgia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Timkhuyenmai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Timkhuyenmai" message="tns:IService1_Timkhuyenmai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TimkhuyenmaiResponse" message="tns:IService1_Timkhuyenmai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNHCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetNHCF" message="tns:IService1_GetNHCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetNHCFResponse" message="tns:IService1_GetNHCF_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GetNHCFCustomFaultMsgFault" name="CustomFaultMsgFault" message="tns:IService1_GetNHCF_CustomFaultMsgFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="HasNHCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/HasNHCF" message="tns:IService1_HasNHCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/HasNHCFResponse" message="tns:IService1_HasNHCF_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMenu" message="tns:IService1_GetMenu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMenuResponse" message="tns:IService1_GetMenu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKhuyenMai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetKhuyenMai" message="tns:IService1_GetKhuyenMai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetKhuyenMaiResponse" message="tns:IService1_GetKhuyenMai_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGopY">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetGopY" message="tns:IService1_GetGopY_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetGopYResponse" message="tns:IService1_GetGopY_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GopY">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GopY" message="tns:IService1_GopY_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GopYResponse" message="tns:IService1_GopY_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/GopYKiemTraLoiFault" name="KiemTraLoiFault" message="tns:IService1_GopY_KiemTraLoiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DatBan">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DatBan" message="tns:IService1_DatBan_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DatBanResponse" message="tns:IService1_DatBan_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/DatBanKiemTraLoiFault" name="KiemTraLoiFault" message="tns:IService1_DatBan_KiemTraLoiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DangNHCF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DangNHCF" message="tns:IService1_DangNHCF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DangNHCFResponse" message="tns:IService1_DangNHCF_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/DangNHCFKiemTraLoiFault" name="KiemTraLoiFault" message="tns:IService1_DangNHCF_KiemTraLoiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DangThucDon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DangThucDon" message="tns:IService1_DangThucDon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DangThucDonResponse" message="tns:IService1_DangThucDon_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/DangThucDonKiemTraLoiFault" name="KiemTraLoiFault" message="tns:IService1_DangThucDon_KiemTraLoiFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DangKhuyenMai">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DangKhuyenMai" message="tns:IService1_DangKhuyenMai_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DangKhuyenMaiResponse" message="tns:IService1_DangKhuyenMai_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IService1/DangKhuyenMaiKiemTraLoiFault" name="KiemTraLoiFault" message="tns:IService1_DangKhuyenMai_KiemTraLoiFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -28,6 +308,252 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Userdangky">
+      <soap:operation soapAction="http://tempuri.org/IService1/Userdangky" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="KiemTraLoiFault">
+        <soap:fault use="literal" name="KiemTraLoiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Userdangnhap">
+      <soap:operation soapAction="http://tempuri.org/IService1/Userdangnhap" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadNHCF">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadNHCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTP">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadQuan">
+      <soap:operation soapAction="http://tempuri.org/IService1/LoadQuan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timdiadiem">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timdiadiem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timdiadiemtp">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timdiadiemtp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timdiadiemtpquan">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timdiadiemtpquan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timdiadiemduong">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timdiadiemduong" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timnguoidang">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timnguoidang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timkhonggian">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timkhonggian" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timmonan">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timmonan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timnhucau">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timnhucau" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timgia">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timgia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Timkhuyenmai">
+      <soap:operation soapAction="http://tempuri.org/IService1/Timkhuyenmai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNHCF">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetNHCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="CustomFaultMsgFault">
+        <soap:fault use="literal" name="CustomFaultMsgFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="HasNHCF">
+      <soap:operation soapAction="http://tempuri.org/IService1/HasNHCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMenu">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMenu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKhuyenMai">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetKhuyenMai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGopY">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetGopY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GopY">
+      <soap:operation soapAction="http://tempuri.org/IService1/GopY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="KiemTraLoiFault">
+        <soap:fault use="literal" name="KiemTraLoiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DatBan">
+      <soap:operation soapAction="http://tempuri.org/IService1/DatBan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="KiemTraLoiFault">
+        <soap:fault use="literal" name="KiemTraLoiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DangNHCF">
+      <soap:operation soapAction="http://tempuri.org/IService1/DangNHCF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="KiemTraLoiFault">
+        <soap:fault use="literal" name="KiemTraLoiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DangThucDon">
+      <soap:operation soapAction="http://tempuri.org/IService1/DangThucDon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="KiemTraLoiFault">
+        <soap:fault use="literal" name="KiemTraLoiFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DangKhuyenMai">
+      <soap:operation soapAction="http://tempuri.org/IService1/DangKhuyenMai" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="KiemTraLoiFault">
+        <soap:fault use="literal" name="KiemTraLoiFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service1">

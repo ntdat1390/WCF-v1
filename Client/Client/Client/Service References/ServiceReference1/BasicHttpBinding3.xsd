@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/BasicHttpBinding?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:8000/BasicHttpBinding?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Server" />
+  <xs:element name="GetAuthors">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAuthorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetAuthorsResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Userdangky">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="hoten" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="diachi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sodienthoai" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phanquyen" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserdangkyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserdangkyResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Userdangnhap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserdangnhapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UserdangnhapResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadNHCF">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadNHCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="LoadNHCFResult" nillable="true" type="q2:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadTP">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadTPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LoadTPResult" nillable="true" type="q3:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadQuan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tp" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadQuanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="LoadQuanResult" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timdiadiem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TenThanhPho" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Quan" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Duong" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chinhxac" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimdiadiemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimdiadiemResult" nillable="true" type="q5:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timdiadiemtp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TenThanhPho" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimdiadiemtpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimdiadiemtpResult" nillable="true" type="q6:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timdiadiemtpquan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TenThanhPho" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Quan" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimdiadiemtpquanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimdiadiemtpquanResult" nillable="true" type="q7:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timdiadiemduong">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Duong" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="chinhxac" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimdiadiemduongResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimdiadiemduongResult" nillable="true" type="q8:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timnguoidang">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimnguoidangResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimnguoidangResult" nillable="true" type="q9:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timkhonggian">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Loai" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimkhonggianResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimkhonggianResult" nillable="true" type="q10:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timmonan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MonAn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimmonanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimmonanResult" nillable="true" type="q11:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timnhucau">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MucDich" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimnhucauResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimnhucauResult" nillable="true" type="q12:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timgia">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GiaTu" type="xs:int" />
+        <xs:element minOccurs="0" name="GiaDen" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimgiaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimgiaResult" nillable="true" type="q13:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Timkhuyenmai">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Loai" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TimkhuyenmaiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="TimkhuyenmaiResult" nillable="true" type="q14:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNHCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="nhahang" nillable="true" type="q15:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNHCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="GetNHCFResult" nillable="true" type="q16:NHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasNHCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Id" type="xs:int" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="nhahang" nillable="true" type="q17:ArrayOfNHCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="HasNHCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="HasNHCFResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdNhaHang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMenuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="GetMenuResult" nillable="true" type="q18:ArrayOfThucDon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKhuyenMai">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdNhaHang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetKhuyenMaiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="GetKhuyenMaiResult" nillable="true" type="q19:KhuyenMai" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGopY">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdNhaHang" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGopYResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="GetGopYResult" nillable="true" type="q20:ArrayOfGopY" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GopY">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdNhaHang" type="xs:int" />
+        <xs:element minOccurs="0" name="TaiKhoan" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NoiDung" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NgayGopY" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GopYResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GopYResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DatBan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IdNhaHang" type="xs:int" />
+        <xs:element minOccurs="0" name="TaiKhoan" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SoCho" type="xs:int" />
+        <xs:element minOccurs="0" name="ThoiGian" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DichVu" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DienThoai" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DatBanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DatBanResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DangNHCF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="NhaHang" nillable="true" type="q21:NHCF" />
+        <xs:element minOccurs="0" name="IdQuan" type="xs:int" />
+        <xs:element minOccurs="0" name="IdThanhPho" type="xs:int" />
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DangNHCFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DangNHCFResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DangThucDon">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="menu" nillable="true" type="q22:ThucDon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DangThucDonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DangThucDonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DangKhuyenMai">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Server" minOccurs="0" name="khmai" nillable="true" type="q23:KhuyenMai" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DangKhuyenMaiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DangKhuyenMaiResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

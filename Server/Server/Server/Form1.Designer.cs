@@ -33,6 +33,9 @@
             this.btStop = new System.Windows.Forms.Button();
             this.btStart = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbContract1 = new System.Windows.Forms.ComboBox();
             this.cbContract3 = new System.Windows.Forms.ComboBox();
             this.cbContract2 = new System.Windows.Forms.ComboBox();
@@ -58,9 +61,6 @@
             this.txbMessageCarrent = new System.Windows.Forms.TextBox();
             this.txbBaseAddress = new System.Windows.Forms.TextBox();
             this.lbBaseAddress = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,6 +136,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "End Point";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(101, 70);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(160, 20);
+            this.textBox3.TabIndex = 18;
+            this.textBox3.Text = "NetTcpBinding";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(101, 46);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(160, 20);
+            this.textBox2.TabIndex = 17;
+            this.textBox2.Text = "WSHttpBinding";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(101, 19);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(160, 20);
+            this.textBox1.TabIndex = 16;
+            this.textBox1.Text = "BasicHTTPBinding";
             // 
             // cbContract1
             // 
@@ -263,6 +290,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(26, 22);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
@@ -369,33 +398,6 @@
             this.lbBaseAddress.Size = new System.Drawing.Size(72, 13);
             this.lbBaseAddress.TabIndex = 34;
             this.lbBaseAddress.Text = "Base Address";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(101, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "BasicHTTPBinding";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(101, 46);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 17;
-            this.textBox2.Text = "WSHttpBinding";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(101, 70);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(160, 20);
-            this.textBox3.TabIndex = 18;
-            this.textBox3.Text = "NetTcpBinding";
             // 
             // Form1
             // 

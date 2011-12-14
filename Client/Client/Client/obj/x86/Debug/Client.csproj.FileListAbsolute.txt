@@ -10,3 +10,15 @@ D:\WCF-v1\Client\Client\Client\bin\Debug\Server.pdb
 D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.exe
 D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.pdb
 D:\WCF-v1\Client\Client\Client\bin\Debug\Client.exe.config
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.DangKy.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.DichVu.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.TimDiaDiem.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.ThongTinNHCF.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.DangThucDon.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.DangKhuyenMai.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.TimKhongGian.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.TimMonAn.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.TimNhuCau.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.TimGia.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.TimKhuyenMai.resources
+D:\WCF-v1\Client\Client\Client\obj\x86\Debug\Client.TacGia.resources

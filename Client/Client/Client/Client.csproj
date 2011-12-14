@@ -49,6 +49,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DangKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKhuyenMai.Designer.cs">
+      <DependentUpon>DangKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangThucDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangThucDon.Designer.cs">
+      <DependentUpon>DangThucDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TacGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TacGia.Designer.cs">
+      <DependentUpon>TacGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongTinNHCF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongTinNHCF.Designer.cs">
+      <DependentUpon>ThongTinNHCF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangKy.Designer.cs">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DichVu.Designer.cs">
+      <DependentUpon>DichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,11 +98,60 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ServiceReference2\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <Compile Include="TimDiaDiem.cs">
+      <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TimDiaDiem.Designer.cs">
+      <DependentUpon>TimDiaDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimGia.Designer.cs">
+      <DependentUpon>TimGia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimKhongGian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimKhongGian.Designer.cs">
+      <DependentUpon>TimKhongGian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimKhuyenMai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimKhuyenMai.Designer.cs">
+      <DependentUpon>TimKhuyenMai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimMonAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimMonAn.Designer.cs">
+      <DependentUpon>TimMonAn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimNhuCau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimNhuCau.Designer.cs">
+      <DependentUpon>TimNhuCau.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DangKhuyenMai.resx">
+      <DependentUpon>DangKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangThucDon.resx">
+      <DependentUpon>DangThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TacGia.resx">
+      <DependentUpon>TacGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongTinNHCF.resx">
+      <DependentUpon>ThongTinNHCF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangKy.resx">
+      <DependentUpon>DangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DichVu.resx">
+      <DependentUpon>DichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -79,7 +164,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TimDiaDiem.resx">
+      <DependentUpon>TimDiaDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimGia.resx">
+      <DependentUpon>TimGia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimKhongGian.resx">
+      <DependentUpon>TimKhongGian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimKhuyenMai.resx">
+      <DependentUpon>TimKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimMonAn.resx">
+      <DependentUpon>TimMonAn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimNhuCau.resx">
+      <DependentUpon>TimNhuCau.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\Server.GopY.datasource" />
+    <None Include="Properties\DataSources\Server.KhuyenMai.datasource" />
+    <None Include="Properties\DataSources\Server.NHCF.datasource" />
+    <None Include="Properties\DataSources\Server.ThucDon.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -95,21 +202,19 @@
     <None Include="Service References\ServiceReference1\BasicHttpBinding1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ServiceReference1\BasicHttpBinding2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\BasicHttpBinding3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ServiceReference1\Service1.wsdl" />
-    <None Include="Service References\ServiceReference2\Service1.wsdl" />
-    <None Include="Service References\ServiceReference2\WSHttpBinding.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference2\WSHttpBinding1.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
-    <WCFMetadataStorage Include="Service References\ServiceReference2\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReference1\BasicHttpBinding.disco" />
@@ -122,21 +227,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference2\WSHttpBinding.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference2\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference2\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference2\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
